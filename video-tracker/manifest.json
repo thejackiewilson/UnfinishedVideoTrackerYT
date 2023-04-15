@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Unfinished Video Tracker",
+    "version": "1.0",
+    "description": "Tracks and displays unfinished videos with progress bar",
+    "permissions": ["storage", "tabs", "scripting", "webNavigation"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "48": "icon.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+      "48": "icon.png"
+    }
+  }
+  
